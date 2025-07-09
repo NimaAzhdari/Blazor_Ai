@@ -1,7 +1,23 @@
 using Main.Client.Pages;
 using Main.Components;
+using Radzen;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddRadzenComponents();
+builder.Services.AddScoped<ThemeService>();
+builder.Services.AddScoped<DialogService>();
+builder.Services.AddScoped<NotificationService>();
+builder.Services.AddScoped<TooltipService>();
+builder.Services.AddScoped<ContextMenuService>();
+
+//for send request
+builder.Services.AddHttpClient();
+
+//for webapi
+builder.Services.AddControllers();
+
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -26,6 +42,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.MapControllers();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()

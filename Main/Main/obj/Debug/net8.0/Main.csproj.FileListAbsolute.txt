@@ -61,3 +61,4 @@
 /workspaces/Blazor_Ai/Main/Main/obj/Debug/net8.0/Main.pdb
 /workspaces/Blazor_Ai/Main/Main/obj/Debug/net8.0/Main.genruntimeconfig.cache
 /workspaces/Blazor_Ai/Main/Main/obj/Debug/net8.0/ref/Main.dll
+/workspaces/Blazor_Ai/Main/Main/bin/Debug/net8.0/Radzen.Blazor.dll

@@ -22,8 +22,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /workspaces/Blazor_Ai/Main/Main.Client
 build_property._RazorSourceGeneratorDebug = 
 
-[/workspaces/Blazor_Ai/Main/Main.Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+[/workspaces/Blazor_Ai/Main/Main.Client/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/workspaces/Blazor_Ai/Main/Main.Client/Pages/Upload.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXBsb2FkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/workspaces/Blazor_Ai/Main/Main.Client/_Imports.razor]

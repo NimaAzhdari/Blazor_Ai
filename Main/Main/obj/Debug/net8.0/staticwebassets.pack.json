@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
+      "Id": "/workspaces/Blazor_Ai/Main/Main/wwwroot/js/exportToExcel.js",
+      "PackagePath": "staticwebassets/js/exportToExcel.js"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Main.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

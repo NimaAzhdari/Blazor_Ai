@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Jkb18TV8b78=",
+  "dgSpecHash": "kw+qL0oVsV4=",
   "success": true,
   "projectFilePath": "/workspaces/Blazor_Ai/Main/Main.Client/Main.Client.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "/home/vscode/.nuget/packages/microsoft.jsinterop.webassembly/8.0.16/microsoft.jsinterop.webassembly.8.0.16.nupkg.sha512",
     "/home/vscode/.nuget/packages/microsoft.net.illink.tasks/8.0.16/microsoft.net.illink.tasks.8.0.16.nupkg.sha512",
     "/home/vscode/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.16/microsoft.net.sdk.webassembly.pack.8.0.16.nupkg.sha512",
+    "/home/vscode/.nuget/packages/radzen.blazor/7.1.4/radzen.blazor.7.1.4.nupkg.sha512",
     "/home/vscode/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/vscode/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/8.0.16/microsoft.netcore.app.runtime.mono.browser-wasm.8.0.16.nupkg.sha512"
   ],

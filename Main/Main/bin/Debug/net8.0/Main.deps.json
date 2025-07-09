@@ -9,7 +9,8 @@
       "Main/1.0.0": {
         "dependencies": {
           "Main.Client": "1.0.0",
-          "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.16"
+          "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.16",
+          "Radzen.Blazor": "7.1.4"
         },
         "runtime": {
           "Main.dll": {}
@@ -238,10 +239,23 @@
           }
         }
       },
+      "Radzen.Blazor/7.1.4": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "8.0.16",
+          "Microsoft.AspNetCore.Components.Web": "8.0.16"
+        },
+        "runtime": {
+          "lib/net8.0/Radzen.Blazor.dll": {
+            "assemblyVersion": "7.1.4.0",
+            "fileVersion": "7.1.4.0"
+          }
+        }
+      },
       "System.IO.Pipelines/8.0.0": {},
       "Main.Client/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.16"
+          "Microsoft.AspNetCore.Components.WebAssembly": "8.0.16",
+          "Radzen.Blazor": "7.1.4"
         },
         "runtime": {
           "Main.Client.dll": {
@@ -425,6 +439,13 @@
       "sha512": "sha512-M5arJGykyyZMg6nNrKqn1QwaqicqZ6zK677JnUlSj0sxW4agIgsh7MFrJM0+Nuja+4dzhXsEBAvCVqKOcGwvxw==",
       "path": "microsoft.jsinterop.webassembly/8.0.16",
       "hashPath": "microsoft.jsinterop.webassembly.8.0.16.nupkg.sha512"
+    },
+    "Radzen.Blazor/7.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cW91a8xgAG2dSm4IQk23j8TJNH82I6jSDuu3yHzZFUw2JAerpHjgRNeJ2enFK1SVB4druHfdvbxuAudMdCGJyw==",
+      "path": "radzen.blazor/7.1.4",
+      "hashPath": "radzen.blazor.7.1.4.nupkg.sha512"
     },
     "System.IO.Pipelines/8.0.0": {
       "type": "package",

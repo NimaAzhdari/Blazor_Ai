@@ -1,0 +1,149 @@
+@page "/Upload"
+@rendermode InteractiveAuto
+@inject DialogService DialogService
+@inject IJSRuntime JSRuntime
+@using System.Text.Json;
+<style>
+    #DragAndDrop {
+        left: 0;
+        --rz-upload-button-bar-background-color: transparent;
+        --rz-upload-button-bar-padding: 0;
+    }
+
+    #DragAndDrop .rz-fileupload-buttonbar .rz-fileupload-choose {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 100px 0;
+    }
+</style>
+
+<RadzenCard Variant="Variant.Outlined">
+    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">input your file here</RadzenText>
+    <RadzenUpload id="DragAndDrop"
+                Progress="OnProgress"
+                Complete="OnComplete"
+                 Error="OnError" 
+                 @ref="upload" 
+                 ChooseText="Drag and drup your file or select it" 
+                 Auto="false"
+                 Multiple="false"
+                 Accept="image/*" 
+                 Url="api/Photo/SaveData" 
+                 InputAttributes="@(new Dictionary<string,object>(){ { "aria-label", "select file" }})"
+                 Style="width: 100%" >
+                 </RadzenUpload>
+    <RadzenButton Text="Upload" 
+                 Click=@OnUpload 
+                 class="rz-mt-4" />
+    
+       
+</RadzenCard>
+@if(ShowCostEstimate){
+<RadzenCard Variant="Variant.Outlined">
+    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Your Cost Estimation</RadzenText>
+     <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
+        <RadzenDataGrid  Data="income.Items" 
+                         TItem="Item"
+                          AllowColumnResize="true" >
+                         <Columns>
+                          <RadzenDataGridColumn Property="Category" Title="Category" />
+                          <RadzenDataGridColumn Property="Description" Title="Description" />
+                          <RadzenDataGridColumn Property="Quantity" Title="Quantity" />
+                          <RadzenDataGridColumn Property="Unit" Title="Unit" />
+                          <RadzenDataGridColumn Property="UnitRate" Title="UnitRate" />
+                          <RadzenDataGridColumn Property="TotalCost" Title="TotalCost" />
+                          </Columns>
+                          <FooterTemplate>
+                            <tr>
+                                <td><strong>Grand Total</strong></td>
+                                <td colspan="5">@income.GrandTotal</td>
+                            </tr>
+                        </FooterTemplate>
+                        
+
+
+
+        </RadzenDataGrid>
+        <RadzenButton Text="Export XLS" Icon="grid_on" Click="ExportToExcel" />
+                     
+
+         </RadzenStack>
+         <h3>Phone Number:**********</h3>
+    </RadzenCard>
+    }
+
+@code{
+    bool ShowCostEstimate=false;
+    RadzenUpload upload;
+    ServerResponse income=new(){};
+
+// In your Razor component
+private async Task ExportToExcel()
+{
+    var data = income;
+    await JSRuntime.InvokeVoidAsync("exportToExcel", data);
+}
+ void OnError(UploadErrorEventArgs args)
+    {  DialogService.Close();
+       DialogService.Alert( args.Message, "error", new AlertOptions() { OkButtonText = "Yes" });
+    }
+void OnUpload()
+    {
+        upload.Upload();
+    }
+async Task OnProgress()
+{
+     await DialogService.OpenAsync("", ds =>
+    @<RadzenStack  Orientation="Orientation.Vertical" AlignItems="AlignItems.Center">
+    <RadzenProgressBarCircular 
+                    ProgressBarStyle="ProgressBarStyle.Primary" 
+                    Value="100" 
+                    ShowValue="false" 
+                    Mode="ProgressBarMode.Indeterminate" 
+                    />
+                    <h4>Processing your data</h4>
+                    </RadzenStack>, new DialogOptions() { ShowTitle = false, Style = "min-height:auto;min-width:auto;width:auto", CloseDialogOnEsc = false });
+    
+
+}
+async Task OnComplete(UploadCompleteEventArgs args)
+{
+     DialogService.Close();
+     try
+    {
+     
+     Console.WriteLine($"JSON Response: {args.JsonResponse}");
+     income = JsonSerializer.Deserialize<ServerResponse>(args.JsonResponse,new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+     Console.WriteLine($"Deserialized Items Count: {income?.Items?.Count}");
+     if (income?.Items != null)
+        ShowCostEstimate=true;
+     else
+            Console.WriteLine("Deserialization failed or Items is null.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error: {ex.Message}");
+    }
+
+}
+
+public class Item
+{
+    public string Category { get; set; }
+    public string Description { get; set; }
+    public decimal Quantity { get; set; }  
+    public string Unit { get; set; }
+    public decimal UnitRate { get; set; }
+    public decimal TotalCost { get; set; }
+}
+
+public class ServerResponse
+{
+    public List<Item> Items { get; set; } = new List<Item>();
+    public decimal GrandTotal { get; set; }
+}
+
+
+
+}

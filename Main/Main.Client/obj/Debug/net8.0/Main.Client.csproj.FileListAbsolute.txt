@@ -1027,3 +1027,8 @@
 /workspaces/Blazor_Ai/Main/Main.Client/obj/Debug/net8.0/refint/Main.Client.dll
 /workspaces/Blazor_Ai/Main/Main.Client/obj/Debug/net8.0/Main.Client.pdb
 /workspaces/Blazor_Ai/Main/Main.Client/obj/Debug/net8.0/ref/Main.Client.dll
+/workspaces/Blazor_Ai/Main/Main.Client/bin/Debug/net8.0/wwwroot/_framework/Radzen.Blazor.wasm
+/workspaces/Blazor_Ai/Main/Main.Client/bin/Debug/net8.0/wwwroot/_framework/Radzen.Blazor.wasm.gz
+/workspaces/Blazor_Ai/Main/Main.Client/bin/Debug/net8.0/Radzen.Blazor.dll
+/workspaces/Blazor_Ai/Main/Main.Client/obj/Debug/net8.0/webcil/Radzen.Blazor.wasm
+/workspaces/Blazor_Ai/Main/Main.Client/obj/Debug/net8.0/compressed/2qwtmk3umq.gz
