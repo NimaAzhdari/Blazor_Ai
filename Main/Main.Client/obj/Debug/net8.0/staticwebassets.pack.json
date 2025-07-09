@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "/workspaces/Blazor_Ai/Main/Main.Client/bin/Debug/net8.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "/workspaces/Blazor_Ai/Main/Main.Client/obj/Debug/net8.0/compressed/c4n02le9t2.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/workspaces/Blazor_Ai/Main/Main.Client/wwwroot/appsettings.Development.json",
+      "PackagePath": "staticwebassets/appsettings.Development.json"
+    },
+    {
+      "Id": "/workspaces/Blazor_Ai/Main/Main.Client/wwwroot/appsettings.json",
+      "PackagePath": "staticwebassets/appsettings.json"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Main.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Main.Client.props",
+      "PackagePath": "build\\Main.Client.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Main.Client.props",
+      "PackagePath": "buildMultiTargeting\\Main.Client.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Main.Client.props",
+      "PackagePath": "buildTransitive\\Main.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
